@@ -2,7 +2,7 @@
 import sys
 from PySide6.QtWidgets import *
 
-from PySide6.QtCore import Slot, QFile, QRectF
+from PySide6.QtCore import Slot, QFile, QRectF, Qt
 #%
 
 
@@ -58,14 +58,16 @@ class Widget(QWidget):
         self.right.addWidget(self.clear)
        
         # image
-        self.scene = QGraphicsScene()
-        self.rect = self.scene.addRect(QRectF(0, 0, 100, 100))
+        #self.scene = QGraphicsScene()
+        #self.rect = self.scene.addRect(QRectF(0, 0, 100, 100))
         #item = scene.itemAt(50, 50, QTransform())
+        
+        
        
         # QWidget Layout
         self.layout = QHBoxLayout(self)
         self.layout.addWidget(self.table)
-        self.layout.addWidget(self.scene)
+        #self.layout.addWidget(self.scene)
         self.layout.addLayout(self.right)
 
         # Fill example data
