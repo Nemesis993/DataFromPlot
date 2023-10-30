@@ -6,7 +6,7 @@ Created on Wed Aug 23 19:19:25 2023
 """
 
 import cv2
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import numpy as np
 import copy
  
@@ -28,8 +28,7 @@ img_original = cv2.adaptiveThreshold(img_original,255,cv2.ADAPTIVE_THRESH_GAUSSI
  cv2.THRESH_BINARY_INV,21,2)
 
 # Output img with window name as 'image'
-
-cv2.imshow('image', img)
+cv2.imshow('image', img_original_c) #img
 #plt.imshow(img)
 
 #plt.xticks([]), plt.yticks([])
@@ -54,8 +53,8 @@ def mouse_click(event, x, y,
     if event == cv2.EVENT_LBUTTONUP:
         
         release = (x, y) 
-        cv2.rectangle(img, click, release, (0,255,255), 2)
-        cv2.imshow('image', img)
+        cv2.rectangle(img_original_c, click, release, (0,255,255), 2)
+        cv2.imshow('image', img_original_c)
   
 cv2.setMouseCallback('image', mouse_click)
    
